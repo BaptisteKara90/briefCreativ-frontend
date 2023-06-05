@@ -18,7 +18,7 @@ export default function SignIn(props) {
   const handleSignIn = (e) => {
     e.preventDefault();
     if(email && password) {
-      const BACK_END = "http://localhost:3000"
+      const BACK_END = "https://brief-creativ-backend.vercel.app"
       fetch(BACK_END+'/users/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

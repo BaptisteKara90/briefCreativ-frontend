@@ -19,7 +19,7 @@ export default function SignUp(props) {
     e.preventDefault();
 
     if(username && email && password) {
-      const BACK_END = "http://localhost:3000"
+      const BACK_END = "https://brief-creativ-backend.vercel.app"
       fetch(BACK_END+'/users/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

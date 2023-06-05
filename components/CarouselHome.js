@@ -9,7 +9,7 @@ function CarouselHome() {
   const user = useSelector((state)=> state.users.value);
   // fetch des creations limit 4
   useEffect(() => {
-    const urlBackEnd = "http://localhost:3000";
+    const urlBackEnd = "https://brief-creativ-backend.vercel.app";
    // let limit = 4 // pb back ne limit pas
    // fetch(urlBackEnd+'/briefs/caroussel/?limit='+limit)
     fetch(urlBackEnd+'/briefs/caroussel/')
