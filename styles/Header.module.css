@@ -1,0 +1,18 @@
+:where(.css-dev-only-do-not-override-15rg2km).ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title, 
+:where(.css-dev-only-do-not-override-15rg2km).ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
+  background-color: white!important;
+  color: black!important;
+}
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected,
+.ant-menu-horizontal .ant-menu-submenu-selected {
+  color: red;
+  border-bottom: 2px solid red;
+  background-color: white!important;
+}

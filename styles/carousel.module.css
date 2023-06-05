@@ -1,0 +1,7 @@
+.carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    box-shadow: black 5px 6px 20px 0px;
+    overflow: hidden;
+    border-radius: 25px; 
+}

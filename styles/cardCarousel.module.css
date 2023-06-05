@@ -1,0 +1,9 @@
+.likeContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: end;
+    padding-right: 80px;
+}
+
+
