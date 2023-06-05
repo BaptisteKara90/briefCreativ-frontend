@@ -24,9 +24,13 @@ export const userSlice = createSlice({
 			state.value.avatar = ""
 		},
 		logOut: (state) => {
+			state.value._id = ''
 			state.value.username = '' 
 			state.value.email = ''
 			state.value.token = ''
+			state.value.followed = ''
+			state.value.avatar =''
+			state.value.notification= ''
 		},
 		updateName: (state, action) =>{
 			state.value.username = action.payload;
