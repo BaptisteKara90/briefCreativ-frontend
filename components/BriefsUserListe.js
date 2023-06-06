@@ -25,7 +25,7 @@ export default function BriefsUserliste(props) { // page des Briefs de l'user //
         }
     };
     const suppImg = (creationId, imgLink) => {
-        const urlBackEnd = "http://localhost:3000";
+        const urlBackEnd = "https://brief-creativ-backend.vercel.app";
         fetch(urlBackEnd + '/briefs/creations/suppimg', {
             method: 'DELETE',
             headers: {

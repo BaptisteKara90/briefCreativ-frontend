@@ -24,7 +24,7 @@ export default function CreationsAdd(props) {
         });
 
     const saveNewImg = async () => {
-        const urlBackEnd = "http://localhost:3000";
+        const urlBackEnd = "https://brief-creativ-backend.vercel.app";
 
         try {
 

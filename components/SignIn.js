@@ -46,7 +46,7 @@ export default function SignIn(props) {
     if(userGoogle.username && userGoogle.email) {
       setConnexionGoogle(true);
       // envoie les données dans la db
-      const BACK_END = "http://localhost:3000"
+      const BACK_END = "https://brief-creativ-backend.vercel.app"
       fetch(BACK_END+'/users/signin', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
