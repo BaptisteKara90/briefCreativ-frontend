@@ -214,7 +214,7 @@ const foCrea = followedCreations.map((creation, i) => {
         formData.append("avatar", image);
         fetch("https://brief-creativ-backend.vercel.app/profils/avatar", {
           method: "POST",
-          mode:'cors',
+          mode:'no-cors',
           headers: { Authorization: user.token },
           body: formData,
         })
