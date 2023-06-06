@@ -219,6 +219,7 @@ const foCrea = followedCreations.map((creation, i) => {
         })
           .then((response) => response.json())
           .then((data) => {
+            console.log(data)
             if (data.result) {
                 fetch("https://brief-creativ-backend.vercel.app/profils", {
                     method: 'PUT',
