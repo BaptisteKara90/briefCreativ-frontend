@@ -45,13 +45,13 @@ export default function BriefUser({ creationId }) {
         setCreationData(data);
         setUserName(data.autor.username);
         setCreationType(data.description_autor);
-        //console.log('les datas:', data)
+   
         // recup avatar
         // va chercher infos de l'user
         fetch('https://brief-creativ-backend.vercel.app/users/search/'+data.autor.username)
         .then(response => response.json())
         .then( dataUs => {
-          console.log('les datas',dataUs);
+  
           if(dataUs.user.profil_id.avatar) {
             setAvatar(dataUs.user.profil_id?.avatar);
           }
@@ -76,7 +76,7 @@ export default function BriefUser({ creationId }) {
 
   const handleLike = async () => {
     try {
-      console.log(user.token)
+
       const response = await fetch(`https://brief-creativ-backend.vercel.app/briefs/creationsLikes/${creationData._id}/like`, {
         method: 'PATCH',
         headers: {
@@ -98,7 +98,7 @@ export default function BriefUser({ creationId }) {
         };
       });
 
-      //console.log('data commentaire:', creation.commentaires)
+
 
     } catch (err) {
       console.error(err.message);
@@ -128,7 +128,7 @@ export default function BriefUser({ creationId }) {
       }
 
       const data = await response.json();
-      console.log("les datas quand com", data);
+
       setCreationData((prevCreation) => {
         return {
           ...prevCreation,
@@ -167,7 +167,7 @@ export default function BriefUser({ creationId }) {
       }
 
       const data = await response.json();
-      console.log(data);
+
       setCreationData((prevCreation) => {
         return {
           ...prevCreation,
