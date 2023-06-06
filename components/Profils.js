@@ -63,7 +63,7 @@ export default function Profils({ username }) {
         }
         
       });
-  }, [username]);
+  }, [profilUser]);
 
   
 useEffect(() => {
