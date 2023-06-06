@@ -34,7 +34,7 @@ export default function Header() {
     fetch(`https://brief-creativ-backend.vercel.app/users/search/${user.username}`)
       .then((response) => response.json())
       .then((data) => {
-  
+        console.log(data)
         setAvatar(data.user.profil_id.avatar);
       });
   }, [user]);
@@ -116,7 +116,7 @@ export default function Header() {
                 size="xs"
                 className="pr-4 text-xl md:text-xs"
               />
-              <span className="hidden md:block"> Créations</span>
+              <span className="hidden md:block">Créations</span>
             </div>
           </Link>
         </div>
