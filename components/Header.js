@@ -34,7 +34,7 @@ export default function Header() {
     fetch(`https://brief-creativ-backend.vercel.app/users/search/${user.username}`)
       .then((response) => response.json())
       .then((data) => {
-        //console.log(data.user.profil_id.avatar);
+  
         setAvatar(data.user.profil_id.avatar);
       });
   }, [user]);
@@ -91,7 +91,7 @@ export default function Header() {
   splitLocation === "/briefs" ? (mbriefs = "bg-slate-100") : (mbriefs = "");
   let mmessagerie = "";
   splitLocation === "/messagerie" ? (mmessagerie = "bg-slate-100") : (mmessagerie = "");
-  console.log(splitLocation)
+
 
   return (
     <div className="px-5">

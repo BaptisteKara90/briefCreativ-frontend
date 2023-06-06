@@ -17,7 +17,7 @@ function CarouselHome() {
     .then(crea => {
         if(crea.result) {
           const testCardData = crea.creations
-          //console.log(testCardData);
+
           setListeCreations(testCardData);
         } else { }
       })
@@ -26,13 +26,13 @@ function CarouselHome() {
 //Fetch server patch route to handle likes on creations
 const handleLike = async (creationId) => {
   const newCreations = await handleLikeLike(creationId, listeCreations, user.token);
-  console.log("New Créat",newCreations);
+
   if(newCreations) {
     setListeCreations([...listeCreations, newCreations]);
   } 
   //setCreations(prevCreations => { handleLikeLike(creationId, creations)});
 }
-console.log(listeCreations);
+
 */
 
   //Fetch server patch route to handle likes on creations
@@ -64,7 +64,7 @@ console.log(listeCreations);
             });
         });
 
-        //console.log('data like:', data.likes)
+  
 
     } catch (err) {
         console.error(err.message);

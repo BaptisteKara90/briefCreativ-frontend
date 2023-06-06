@@ -3,7 +3,7 @@ const handleLikeLike = (creationId, prevCreations, token) => {
   return new Promise( async (resolve, reject) => {
     
     try {
-      //console.log(user.token)
+
       const response = await fetch(`https://brief-creativ-backend.vercel.app/briefs/creationsLikes/${creationId}/like`, {
         method: 'PATCH',
         headers: {
@@ -31,7 +31,7 @@ const handleLikeLike = (creationId, prevCreations, token) => {
                 }
                 return creation;
             });
-           console.log("Créations like Tab",retourLikes)
+
             return { creations: retourLikes, retour: true }
           }
           else {

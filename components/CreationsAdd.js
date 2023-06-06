@@ -11,7 +11,7 @@ export default function CreationsAdd(props) {
     const [ajoutok, setAjoutok] = useState('');
     const [isPrivate, setIsPrivate] = useState(false);
 
-    //console.log("Data Création ADD",props)
+
     const resizeFile = (file) =>
         new Promise((resolve) => {
             Resizer.imageFileResizer(
@@ -27,7 +27,7 @@ export default function CreationsAdd(props) {
         const urlBackEnd = "http://localhost:3000";
 
         try {
-            //console.log("Img upload"+uploadImg);
+
             if (uploadImg == '') {
                 setNoimg(<p className='text-rouge py-2'>Tu dois ajouter une image.</p>)
             }
@@ -54,7 +54,7 @@ export default function CreationsAdd(props) {
                     .then(retour => {
                         // return true ou false
                         // si true ferme la modal et majr page
-                        console.log("Retour Add : ", retour);
+                       
                         if (retour.result) {
                             setAjoutok(<p className='text-lightblue py-2'>Ajout ok</p>)
                             //props.setmodalAddCreationClose(true);// fermer modal

@@ -5,10 +5,6 @@ import Link from 'next/link';
 
 export default function CardCommunaute(props) {
 
-
-//console.log('pros.liked :' ,props.liked)
-//console.log('props.creationID:', props.creationId)
-
     return (
         <div className="flex flex-col justify-between drop-shadow rounded-lg bg-white mb-5 md:mx-3 ml-1">
             <Link href={`/briefuser/${props.creationId}`}>

@@ -7,8 +7,7 @@ import { faEye, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import CreationsAdd from './CreationsAdd';
 
 export default function BriefsUserliste(props) { // page des Briefs de l'user // page privée
-    console.log('les props', props)
-    console.log('le private:', props.data.creationId)
+
 
     const user = useSelector((state) => state.users.value);
     const typeProjet = props.data.projectType;
@@ -88,7 +87,7 @@ export default function BriefsUserliste(props) { // page des Briefs de l'user //
     let setDescription = ""
     let creationsListe=""
     
-    console.log("Propsdata",props)
+
         if(props.data.creations_id.length > 0) {
             //idBrief = props.data._id
             props.data.creations_id.map( (dataImg, key) => {
@@ -190,7 +189,7 @@ export default function BriefsUserliste(props) { // page des Briefs de l'user //
     const moisDate = dateB.getMonth()+1;
     const mois = moisDate < 10 ? "0"+moisDate : moisDate;
     const dateFr = jour+"/"+mois+"/"+dateB.getFullYear();
-//console.log('DATA',props.data)
+
     return (
         <div className='py-5'>
             {/* <p>IdBrief : {props.data._id} ID OK</p> */}

@@ -44,7 +44,7 @@ export default function Profil() {
   //mise a jour des infos profil
   useEffect(() => {
     setNewBio(profilUser.bio);
-    console.log(newBio)
+
   }, [profilUser.bio]);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Profil() {
 
   useEffect(() => {
     if (userInfo && userInfo.followed) {
-      console.log('followings', userInfo.followed) 
+  
         let creations = [];
         const fetchCreations = async () => {
             for (let followedUser of userInfo.followed) {
@@ -86,9 +86,7 @@ export default function Profil() {
     }
 }, [userInfo.followed]);
 
-useEffect(() => {
-  console.log('userInfo', userInfo);
-}, [userInfo])
+
 
 const foCrea = followedCreations.map((creation, i) => {
   return (
@@ -137,7 +135,7 @@ const foCrea = followedCreations.map((creation, i) => {
             });
         });
 
-        //console.log('data like:', data.likes)
+
 
     } catch (err) {
         console.error(err.message);
@@ -253,7 +251,7 @@ const foCrea = followedCreations.map((creation, i) => {
   // Change username
   let borderStyle = {};
   const usernameClick = () => {
-    console.log("nouveau username");
+
     if (newUsername.length < 3) {
       setErrorName("Le nom doit comporter au minimum 3 caractères");
       borderStyle = { borderColor: "#ED7F5C" };
@@ -266,7 +264,6 @@ const foCrea = followedCreations.map((creation, i) => {
     fetch(`https://brief-creativ-backend.vercel.app/users/search/${newUsername}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.result)
         if (data.result) {
           setErrorName("Le nom d'utilisateur existe déjà");
           borderStyle = { borderColor: "#ED7F5C" };
@@ -312,7 +309,6 @@ const foCrea = followedCreations.map((creation, i) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data.result) {
           setValidBio("Nouvelle bio enregistrée avec succès !");
           setTimeout(() => {

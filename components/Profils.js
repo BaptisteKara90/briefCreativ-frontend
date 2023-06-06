@@ -74,7 +74,7 @@ useEffect(() => {
 
 useEffect(() => {
   if (profilUser && profilUser.followed) {
-    console.log('followings', profilUser.followed) 
+
       let creations = [];
       const fetchCreations = async () => {
           for (let followedUser of profilUser.followed) {

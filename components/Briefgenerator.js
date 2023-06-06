@@ -95,7 +95,7 @@ export default function BriefGenerator() {
           data.styleType.name
         );
         setData(data);
-        console.log(data);
+
         fetch(`https://api.huemint.com/color`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -103,7 +103,7 @@ export default function BriefGenerator() {
         })
           .then((response) => response.json())
           .then((dataColors) => {
-            console.log(dataColors);
+
             setColors(dataColors.results[0].palette);
           });
       });

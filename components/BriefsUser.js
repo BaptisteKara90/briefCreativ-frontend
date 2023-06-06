@@ -22,7 +22,7 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
     if(!user.token) {
         window.location.replace('/'); // redirect to Home
     }
-    //console.log(user);
+
     // liste les briefs de user
     useEffect(() => {
         const urlBackEnd = "http://localhost:3000";
@@ -31,13 +31,12 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
         .then(us => {
             if(us._id) {
                 setUserId(us._id);
-                //console.log("User Search", us);
+
                 const userId = us._id
                 fetch(urlBackEnd+'/briefs/user/'+userId+'/briefs')
                 .then(response => response.json())
                 .then(data => { // briefs et creations de ce brief
                     if(data.result) {
-                        console.log("Briefs", data.briefs);
                         setBriefsUser(data.briefs);
                     }
                     else {  }
@@ -75,12 +74,12 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
     
     let BriefFinis = [];
     let BriefEnCours = [];
-    console.log('BriefUser avant map : ',briefsUser);
+  
     briefsUser.map( // liste les briefs en cours et les briefs finis
         (data, ki) => {
-            console.log("map", data)
+
             if(data.creations_id.length > 0) {
-                console.log("bfinis", data)
+
                 BriefFinis.push(<BriefsUserliste data={data} fini={ true } key={ "bfini_"+ki } user_id={ userId }/>);
             } else {
                 let k2= "k"+ki
@@ -89,9 +88,9 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
         }
     )
     let couleurs
-    //console.log("BriefsEncours",BriefEnCours);
+
     if(BriefEnCours[0] && BriefEnCours[0].props.data.color) {
-        //console.log("Brief en cours",briefsUser[0])
+
         couleurs = BriefEnCours[0].props.data.color.map( // couleurs du dernier
             (col, k) => {
                 return (

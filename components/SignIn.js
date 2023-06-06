@@ -36,7 +36,7 @@ export default function SignIn(props) {
         }
       })
       .catch((error) => {
-        //console.log('Fetch error:', error);
+
       });
     } else {
       setInvalide("Veuillez remplir tous les champs !");
@@ -75,7 +75,7 @@ export default function SignIn(props) {
       <GoogleLogin onSuccess={credentialResponse => {
             const token = credentialResponse.credential;
             const decoded = jwt_decode(token);
-            console.log("TOKEN decode = ", decoded);
+
             if(decoded.email) {
               const donneesUser = {
                 username: decoded.name,

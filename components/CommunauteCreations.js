@@ -46,7 +46,7 @@ export default function CommunauteCreations() {
   const onChangeNotation = (e) => {
     const value = e.target.value
     setValueNotation(value)
-    //console.log(value)
+
     sortCreations(value)
   };
 
@@ -56,7 +56,7 @@ export default function CommunauteCreations() {
     let url = '';
     if (username) {
       url = `https://brief-creativ-backend.vercel.app/briefs/user/search/${username}`;
-      //console.log(url)
+  
     } else {
       url = 'https://brief-creativ-backend.vercel.app/briefs/creationsWParams';
     }
@@ -88,7 +88,7 @@ export default function CommunauteCreations() {
         setCreations(data.creations);
         sortCreations(valueNotation)
       }
-      //console.log(data)
+
     } catch (err) {
       console.error(err.message);
     }
@@ -112,7 +112,7 @@ export default function CommunauteCreations() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      console.log(data)
+
       setCreations(data.creations);
       sortCreations(valueNotation)
     } catch (err) {
@@ -124,33 +124,32 @@ export default function CommunauteCreations() {
 
   const handleUsernameChange = (e) => {
     setusername(e.target.value);
-    console.log('username: ', e.target.value)
+
   };
 
   const handleProjectTypeChange = (value) => {
     setSelectedProjectType(value);
-    console.log("selected projectType: ", value)
+
   };
 
   const handleBusinessTypeChange = (value) => {
     setSelectedBusinessType(value);
-    console.log("selected businessType: ", value)
+ 
   };
 
   const handleStyleTypeChange = (value) => {
     setSelectedStyleType(value);
-    console.log("selected styleType: ", value)
+
   };
 
   const user = useSelector((state) => state.users.value);
-  //console.log(user)
-  //console.log(user._id)
+
 
   /*
   //Fetch server patch route to handle likes on creations
   const handleLike = async (creationId) => {
     const newLikes = await handleLikeLike(creationId, creations, user.token);
-    console.log("New Créat",newLikes);
+
     if(newLikes.retour) {
       setCreations([...creations, newLikes.creations]);
     } 
@@ -187,7 +186,7 @@ export default function CommunauteCreations() {
         });
       });
 
-      //console.log('data like:', data.likes)
+  
 
     } catch (err) {
       console.error(err.message);
@@ -208,11 +207,7 @@ export default function CommunauteCreations() {
       if (creation.private) {
         return null;
       }
-      console.log("Créas like", creation.like)
-      //console.log("usId",user._id)
-      // console.log('le user id:', user._id)
-      // console.log('les likes des creations :', creation.like ? creation.like : null)
-      // console.log(creation)
+     
       if (creation && creation.autor && creation.brief_id) {
         return (
           <CardCommunaute
