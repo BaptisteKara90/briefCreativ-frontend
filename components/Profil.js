@@ -212,7 +212,7 @@ const foCrea = followedCreations.map((creation, i) => {
         const image = await resizeFile(newFile);
         const formData = new FormData();
         formData.append("avatar", image);
-        fetch("https://brief-creativ-backend-git-main-pskunk.vercel.app/profils/avatar", {
+        fetch("https://brief-creativ-backend.vercel.app/profils/avatar", {
           method: "POST",
           mode:'cors',
           headers: { Authorization: user.token },
