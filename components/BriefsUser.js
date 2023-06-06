@@ -29,6 +29,7 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
         fetch(urlBackEnd+'/briefs/user/search/'+user.username)
         .then(response => response.json())
         .then(us => {
+            console.log(us)
             if(us._id) {
                 setUserId(us._id);
 
