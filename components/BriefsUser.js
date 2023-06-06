@@ -25,7 +25,7 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
 
     // liste les briefs de user
     useEffect(() => {
-        const urlBackEnd = "http://localhost:3000";
+        const urlBackEnd = "https://brief-creativ-backend.vercel.app";
         fetch(urlBackEnd+'/briefs/user/search/'+user.username)
         .then(response => response.json())
         .then(us => {
