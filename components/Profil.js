@@ -434,7 +434,7 @@ const foCrea = followedCreations.map((creation, i) => {
       errorMessage: "Le champ facebook n'est pas valide",
     },
     linkedin: {
-      regex: /^(https:\/\/)?(www\.)?linkedin\.com\/[a-zA-Z0-9_.-]+\/?$/,
+      regex: /^(https:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_.-]+\/?$/,
       errorMessage: "Le champ linkedin n'est pas valide",
     },
   };
