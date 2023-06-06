@@ -34,7 +34,6 @@ export default function Header() {
     fetch(`https://brief-creativ-backend.vercel.app/users/search/${user.username}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
         setAvatar(data.user.profil_id.avatar);
       });
   }, [user]);
