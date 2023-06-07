@@ -73,8 +73,8 @@ export default function BriefUser({ creationId }) {
     return <div>Loading...</div>;
   }
 
-  const metaTitle ="Brief créatif de "+user.username;
-  const metaDescription = "Découvrez la création graphique de "+user.username+". Son Brief généré sur notre site : un projet type : "+briefData.projectType+", de style : "+briefData.styleType+", pour cette entreprise : "+briefData.entrepriseType;
+  const metaTitle ="Brief créatif de "+userName;
+  const metaDescription = "Découvrez la création graphique de "+userName+". Son Brief généré sur notre site : un projet type : "+briefData.projectType+", de style : "+briefData.styleType+", pour cette entreprise : "+briefData.entrepriseType;
   
   //handle likes on creations and post them to db
 
