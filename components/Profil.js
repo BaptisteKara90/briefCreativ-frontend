@@ -7,14 +7,19 @@ import Resizer from "react-image-file-resizer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faSave, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTwitter, faLinkedinIn, faFacebookF } from "@fortawesome/free-brands-svg-icons";
+import { Helmet } from "react-helmet";
 
 //Private user's page
 export default function Profil() {
+
   const user = useSelector((state) => state.users.value);
   const dispatch = useDispatch();
   const [profilUser, setProfilUser] = useState({});
   const [followedCreations, setFollowedCreations] = useState([]);
   const [userInfo, setUserInfo] = useState({})
+
+  const metaTitle ="Profil de "+user.username+" - Brief Créativ'";
+  const metaDescription = "Découvrez les créations graphiques de "+user.username+". Suivez son profil créatif.";
     // Recupère les infos du profil d'un user
   useEffect(() => {
     fetch("https://brief-creativ-backend.vercel.app/profils", {
@@ -525,6 +530,10 @@ const foCrea = followedCreations.map((creation, i) => {
   };
   return (
     <div className="mt-10">
+      <Helmet>
+          <title>{metaTitle}</title>
+          <meta name="description" content={metaDescription}/>
+      </Helmet> 
       <div className="flex flex-col items-center">
         {/* AVATAR + USER/BIO */}
         <div className="flex flex-col w-full items-center md:flex-row md:justify-center">

@@ -5,6 +5,7 @@ import { faHeart, faTrash, faUser } from '@fortawesome/free-solid-svg-icons';
 import React, { useRef } from 'react';
 import Image from "next/image";
 import Link from 'next/link';
+import { Helmet } from "react-helmet";
 import {
   EmailIcon, FacebookIcon, LinkedinIcon, PinterestIcon, TwitterIcon, WhatsappIcon,
   EmailShareButton, FacebookShareButton, LinkedinShareButton, PinterestShareButton, TwitterShareButton, WhatsappShareButton,
@@ -72,6 +73,9 @@ export default function BriefUser({ creationId }) {
     return <div>Loading...</div>;
   }
 
+  const metaTitle ="Brief créatif de "+user.username;
+  const metaDescription = "Découvrez la création graphique de "+user.username+". Son Brief généré sur notre site : un projet type : "+briefData.projectType+", de style : "+briefData.styleType+", pour cette entreprise : "+briefData.entrepriseType;
+  
   //handle likes on creations and post them to db
 
   const handleLike = async () => {
@@ -219,6 +223,10 @@ const shareUrl = window.location; // nom de la page
 
   return (
     <div className="flex flex-col m-8">
+      <Helmet>
+          <title>{metaTitle}</title>
+          <meta name="description" content={metaDescription}/>
+      </Helmet> 
       {/*  Image user + Titre  */}
       <section className="flex lg:flex-row flex-col justify-between items-center">
         

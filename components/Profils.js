@@ -382,7 +382,7 @@ const sendMessage = (receiveUser)=>{
       </div>
       <div className="flex flex-col items-center mt-5">
         <p className="my-10 text-darkblue text-center text-2xl font-bold font-montserrat md:text-xl lg:text-2xl">
-          les utilisateur suivis par {profilUser.username} :
+          Les utilisateurs suivis par {profilUser.username} :
         </p>
         <div className="flex flex-wrap justify-center items-center place-content-start md:-mt-5">{foCrea}</div>
       </div>
