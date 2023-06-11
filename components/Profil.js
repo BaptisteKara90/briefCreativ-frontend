@@ -206,7 +206,7 @@ const foCrea = followedCreations.map((creation, i) => {
   const btnAvatar = async () => {
     const okTypes = ["image/jpeg", "image/png"];
     if (!okTypes.includes(newFile.type)) {
-      console.error("raté petit trou du cul va");
+      console.error("Le type de fichier est incorrect");
     } else {
       try {
         const image = await resizeFile(newFile);
