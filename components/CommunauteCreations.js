@@ -4,9 +4,13 @@ import MenuBrief from './MenuBrief';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDownShortWide, faArrowUpShortWide, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
 //import handleLikeLike from "../modules/handleLike";
 
 export default function CommunauteCreations() {
+
+  const metaTitle ="Créations de la communauté - Brief Créativ'";
+  const metaDescription = "Venez découvrir les céations de notre communauté de graphistes professionnels ou amateurs. Ils ont générés des Briefs de créations avec notre générateur.";
 
   //State variables to hold user selections
   const [valueNotation, setValueNotation] = useState(null);  // Holds rating value
@@ -236,6 +240,10 @@ export default function CommunauteCreations() {
 
   return (
     <div className="container mx-auto">
+      <Helmet>
+          <title>{metaTitle}</title>
+          <meta name="description" content={metaDescription}/>
+      </Helmet> 
       <h1 className="text-center text-darkblue text-5xl mb-20 mt-20 font-montserrat font-extrabold">Créations de la Communauté</h1>
 
       <div className="flex flex-col lg:flex-row lg:justify-around justify-center mx-5">
@@ -296,7 +304,7 @@ export default function CommunauteCreations() {
           </button>
         </div>
         <div className="flex flex-wrap justify-center items-center place-content-start lg:w-2/3 md:-mt-5">
-          {cards.length > 0 ? cards : <p>Aucune création n'a été trouvée.</p>}
+          {cards.length > 0 ? cards : <p className="bg-or/10 w-full py-5 text-center rounded-lg text-xl ml-10">Aucune création n'a été trouvée.</p>}
         </div>
 
       </div>

@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { Helmet } from "react-helmet";
 
 export function Messagerie(props) {
+  const metaTitle ="Messagerie - mes contacts Brief Creativ'";
 
   if (props.isUser) {
     return (
       <div className="chat chat-end">
+        <Helmet>
+            <title>{metaTitle}</title>
+        </Helmet> 
         <div className="chat-image avatar">
             {props.avatar ? (
               <Image

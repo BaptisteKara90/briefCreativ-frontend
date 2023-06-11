@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import BriefsUserliste from './BriefsUserListe';
 import CreationsAdd from './CreationsAdd';
+import { Helmet } from "react-helmet";
 
 export default function BriefsUser() { // page des Briefs et créations de l'user // page privée
     
@@ -14,6 +15,8 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
     const [ userId, setUserId ] = useState(0);
     // useRef modal add Creation
     const [ modalAddCreation, setModalAddCreation] = useState("modal-toggle");
+
+    const metaTitle ="Mes Briefs - mes créations - Brief Créativ'";
 
     const setmodalAddCreationClose = (retour) => {
         if (retour) setModalAddCreation("hidden"); // ferme la modal
@@ -108,6 +111,9 @@ export default function BriefsUser() { // page des Briefs et créations de l'use
 
     return (
         <div className="">
+            <Helmet>
+                <title>{metaTitle}</title>
+            </Helmet> 
           
             <h1 className="text-center text-darkblue text-5xl mb-20 mt-20 font-montserrat font-extrabold">Mes Briefs Créatifs</h1>
 
